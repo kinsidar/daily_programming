@@ -1,7 +1,0 @@
-{ 
-    "gitbook": "2.5.2",
-    "structure": { 
-      "summary": "docs/SUMMARY.md", 
-      "getting started": "docs/getting-started.md"
-    } 
-}
