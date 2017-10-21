@@ -13,6 +13,8 @@
     "gitbook-cli": "^2.3.2"
   },
   "scripts": {
+    "docs:build": "npm run docs:prepare && rm -rf _book && gitbook build",
+    "docs:publish": "npm run docs:build && gh-pages -d _book",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:prepare": "gitbook install",
     "docs:watch": "npm run docs:prepare && gitbook serve"
