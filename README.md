@@ -44,7 +44,9 @@ Refer to [this](https://help.github.com/articles/user-organization-and-project-p
 To publish the book, you need to create an empty gh-pages branch and the content you push onto that branch will be published as http://[username].github.io/[repo]
 
 1. [Manually create gh-pages branch](https://help.github.com/articles/creating-project-pages-using-the-command-line/) 
- + asdf
+ + git checkout -b gh-pages
+ + git rm -rf .
+ + npm install gh-pages --save-dev
 2. adsf
 
 
