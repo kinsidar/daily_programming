@@ -17,7 +17,7 @@
   "scripts": {
     "docs:build": "npm run docs:prepare && del _book && gitbook build",
     "docs:gbpublish": "npm run docs:build && gh-pages -d _book",
-    "docs:publish": "npm run docs:build && cd _book && git init && git commit --allow-empty -m 'Updatedocs' && git checkout gh-pages && git add . && git commit -am 'Update docs' && git push git@github.com:kinsidar/daily_programming gh-pages --force",
+    "docs:publish": "npm run docs:build && cd _book && git init && git commit --allow-empty -m \" Update docs\" && git checkout gh-pages && git add . && git commit -am \" Update docs\" && git push git@github.com:kinsidar/daily_programming gh-pages --force",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:prepare": "gitbook install",
     "docs:watch": "npm run docs:prepare && gitbook serve"
