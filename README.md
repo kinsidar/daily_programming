@@ -88,5 +88,7 @@ $ git push git@github.com:<username>/<repo> gh-pages --force
 4. Run the docs:publish command 
 Your page should be live on http://[username].github.io/[repo]   !
 
+> you can also use [gitbook plugins](https://plugins.gitbook.com/) or add css by referencing to a .css file in your package.json
+
 
 
