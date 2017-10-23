@@ -47,7 +47,9 @@ To publish the book, you need to create an empty gh-pages branch and the content
  + git checkout -b gh-pages
  + git rm -rf .
  + npm install gh-pages --save-dev
-2. adsf
+2. add this to package.json for script to build book
+
+"docs:build": "npm run docs:prepare && del _book && gitbook build"
 
 
 
