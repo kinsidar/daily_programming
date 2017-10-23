@@ -78,7 +78,7 @@ $ git add .
 $ git commit -am "Update docs"
 $ git push git@github.com:<username>/<repo> gh-pages --force
 ```
-> IMPORTANT: to use `$ git push git@github.com:<username>/<repo> gh-pages --force` command, you need to set [generate](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)  and [add](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) your SSH key to your github account
+> IMPORTANT: to use `$ git push git@github.com:<username>/<repo> gh-pages --force` command, you need to [generate](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)  and [add](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) your SSH key to your github account
 
 > also remember to change <username> and <repo> to your own
 
