@@ -1,4 +1,7 @@
 # Setting up Gitbook for a project and hosting on Github Pages
+
+![npm version](https://img.shields.io/badge/npm-v3.10.10-blue.svg)
+
 Credits to [this](https://medium.com/@gpbl/how-to-use-gitbook-to-publish-docs-for-your-open-source-npm-packages-465dd8d5bfba) guide
 > This is a documentation of setting up the basic requirements for your gitbook and hosting onto github pages, refer to [gitbook toolchain documentation](https://toolchain.gitbook.com/) for details on how to structure and write your gitbook
 
@@ -80,7 +83,7 @@ $ git push git@github.com:<username>/<repo> gh-pages --force
 ```
 > IMPORTANT: to use `$ git push git@github.com:<username>/<repo> gh-pages --force` command, you need to [generate](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)  and [add](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) your SSH key to your github account
 
-> also remember to change <username> and <repo> to your own
+> also remember to change [username] and [repo] to your own
 
 4. Run the docs:publish command 
 Your page should be live on http://[username].github.io/[repo]   !
