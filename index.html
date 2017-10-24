@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Setting up Gitbook for a project</title>
+        <title>Introduction | Setting up Gitbook for a project and hosting on Github Pages</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Credits to this guide">
+        <meta name="description" content="npm version">
         <meta name="generator" content="GitBook 2.5.2">
         
         
@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-chapter-title="Introduction" data-filepath="README.md" data-basepath="." data-revision="Mon Oct 23 2017 10:23:09 GMT-0700 (Pacific Daylight Time)">
+    <div class="book" data-level="0" data-chapter-title="Introduction" data-filepath="README.md" data-basepath="." data-revision="Tue Oct 24 2017 13:17:01 GMT-0700 (Pacific Daylight Time)">
     
 
 <div class="book-summary">
@@ -127,7 +127,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Setting up Gitbook for a project</a>
+        <a href="./" >Setting up Gitbook for a project and hosting on Github Pages</a>
     </h1>
 </div>
 
@@ -137,13 +137,15 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-gitbook-for-a-project">Setting up Gitbook for a project</h1>
+                        <h1 id="setting-up-gitbook-for-a-project-and-hosting-on-github-pages">Setting up Gitbook for a project and hosting on Github Pages</h1>
+<p><img src="https://img.shields.io/badge/npm-v3.10.10-blue.svg" alt="npm version"></p>
 <p>Credits to <a href="https://medium.com/@gpbl/how-to-use-gitbook-to-publish-docs-for-your-open-source-npm-packages-465dd8d5bfba" target="_blank">this</a> guide</p>
 <blockquote>
-<p>IMPORTANT I am using node LTS (node version 6.11.4 and npm version 3.10.10), you may run into erros using current version of node.</p>
+<p>This is a documentation of setting up the basic requirements for your gitbook and hosting onto github pages, refer to <a href="https://toolchain.gitbook.com/" target="_blank">gitbook toolchain documentation</a> for details on how to structure and write your gitbook</p>
+<p><em>IMPORTANT</em> I am using node LTS (node version 6.11.4 and npm version 3.10.10), you may run into erros using current version of node.</p>
 </blockquote>
 <ol>
-<li>Install npm (npm install npm -g)</li>
+<li>Create project&apos;s README.md if you haven&apos;t, which will be the introduction/front page of your gitbook</li>
 <li>Create book.json in project&apos;s root  (Gitbook settings &amp; structure)<pre><code>{ 
  &quot;gitbook&quot;: &quot;2.5.2&quot;,
  &quot;structure&quot;: { 
@@ -151,19 +153,25 @@
  } 
 }
 </code></pre></li>
-<li>Create SUMMARY.md in /docs directory (table of content(ToC) - tree structure of book - chapters and articles)
+<li>Create <a href="https://toolchain.gitbook.com/pages.html" target="_blank">SUMMARY.md</a> in /docs directory
 ```<h1 id="table-of-content">Table of content</h1>
 </li>
-<li><a href="docs/getting-started.html">Getting Started</a>
+<li><a href="docs/getting-started.html">Getting Started</a></li>
+<li><a href="docs/api-guide.html">Second Chapter</a>
 ```</li>
-<li>Save all .md files linked from ToC in the /docs directory - e.g. getting-started.md</li>
-<li>Create README.md in the root ( book&apos;s introduction)</li>
+<li>Create and save .md files which are linked in SUMMARY.md in the /docs or its subdirectories (the book&apos;s chapters and articles)</li>
 </ol>
+<p>Now you have your basic structure of your book that is ready to be published!</p>
 <h2 id="previewing-the-book">Previewing the book</h2>
 <ol>
 <li>Install gitbook-cli and add to development dependency<pre><code>npm install gitbook-cli --save-dev
 </code></pre></li>
-<li>create package.json in root and add following script:<pre><code>&quot;scripts&quot;: {
+</ol>
+<blockquote>
+<p>you can add node_modules directory to .gitignore</p>
+</blockquote>
+<ol>
+<li>create package.json in root and add following scripts:<pre><code>&quot;scripts&quot;: {
 &quot;docs:prepare&quot;: &quot;gitbook install&quot;,
 &quot;docs:watch&quot;: &quot;npm run docs:prepare &amp;&amp; gitbook serve&quot;
 }
@@ -172,18 +180,48 @@
 <li>book will be hosted on localhost:4000</li>
 </ol>
 <h2 id="publishing-the-book-on-github-pages">Publishing the book on Github Pages</h2>
-<p>Refer to <a href="https://help.github.com/articles/user-organization-and-project-pages/#project-pages" target="_blank">this</a> for User/Organization vs Project GitHub Pages</p>
-<p>To publish the book, you need to create an empty gh-pages branch and the content you push onto that branch will be published as <a href="http://[username].github.io/[repo" target="_blank">http://[username].github.io/[repo</a>]</p>
-<ol>
-<li><a href="https://help.github.com/articles/creating-project-pages-using-the-command-line/" target="_blank">Manually create gh-pages branch</a> <ul>
-<li>git checkout -b gh-pages</li>
-<li>git rm -rf .</li>
-<li>npm install gh-pages --save-dev</li>
-</ul>
+<ul>
+<li><p>In this guide we will create an empty branch called &quot;gh-pages&quot; to push our gitbook which will be displayed on the project github pages (<a href="http://[username].github.io/[repo" target="_blank">http://[username].github.io/[repo</a>])</p>
 </li>
-<li>add this to package.json for script to build book</li>
+<li><p>Create the gh-pages branch and empty all content</p>
+</li>
+<li><p>Go to repository settings on github and under github pages, select the source as gh-pages branch </p>
+</li>
+<li><p>Switch to master branch and add the following script in package.json:</p>
+<pre><code>&quot;scripts&quot;: {
+&quot;docs:build&quot;: &quot;npm run docs:prepare &amp;&amp; rm -rf _book &amp;&amp; gitbook build&quot;
+}
+</code></pre></li>
+</ul>
+<p>running this npm command will create _book directory which will hold the contents to be published on the github pages (_book/index.html is the static website generated by gitbook) </p>
+<blockquote>
+<p>you can add _book to .gitignore</p>
+</blockquote>
+<ol>
+<li>Add an npm script to your package.json which will publish the content in _book to the gh_pages branch</li>
 </ol>
-<p>&quot;docs:build&quot;: &quot;npm run docs:prepare &amp;&amp; del _book &amp;&amp; gitbook build&quot;</p>
+<p>This is the command I use:</p>
+<pre><code>&quot;docs:publish&quot;: &quot;npm run docs:build &amp;&amp; cd _book &amp;&amp; git init &amp;&amp; git commit --allow-empty -m \&quot; Update docs\&quot; &amp;&amp; git checkout gh-pages &amp;&amp; git add . &amp;&amp; git commit -am \&quot; Update docs\&quot; &amp;&amp; git push git@github.com:&lt;username&gt;/&lt;repo&gt; gh-pages --force&quot;
+</code></pre><p>Which consits of these commands:</p>
+<pre><code>$ npm run docs:build
+$ cd _book
+$ git init
+$ git commit --allow-empty -m &quot;Update docs&quot;
+$ git checkout gh-pages
+$ git add .
+$ git commit -am &quot;Update docs&quot;
+$ git push git@github.com:&lt;username&gt;/&lt;repo&gt; gh-pages --force
+</code></pre><blockquote>
+<p>IMPORTANT: to use <code>$ git push git@github.com:&lt;username&gt;/&lt;repo&gt; gh-pages --force</code> command, you need to <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">generate</a>  and <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank">add</a> your SSH key to your github account</p>
+<p>also remember to change [username] and [repo] to your own</p>
+</blockquote>
+<ol>
+<li>Run the docs:publish command 
+Your page should be live on <a href="http://[username].github.io/[repo" target="_blank">http://[username].github.io/[repo</a>]   !</li>
+</ol>
+<blockquote>
+<p>you can also use <a href="https://plugins.gitbook.com/" target="_blank">gitbook plugins</a> or add css by referencing to a .css file in your package.json</p>
+</blockquote>
 
                     
                     </section>
