@@ -19,9 +19,9 @@ Credits to [this](https://medium.com/@gpbl/how-to-use-gitbook-to-publish-docs-fo
 ```
 3. Create [SUMMARY.md](https://toolchain.gitbook.com/pages.html) in /docs directory
 ```
-# Table of content 
-* [Getting Started](docs/getting-started.md)
-* [Second Chapter](docs/api-guide.md)
+    # Table of content 
+    * [Getting Started](docs/getting-started.md)
+    * [Second Chapter](docs/api-guide.md)
 ```
 4. Create and save .md files which are linked in SUMMARY.md in the /docs or its subdirectories (the book's chapters and articles)
 
@@ -85,8 +85,9 @@ $ git push git@github.com:<username>/<repo> gh-pages --force
 
 > also remember to change [username] and [repo] to your own
 
-4. Run the docs:publish command 
-Your page should be live on http://[username].github.io/[repo]   !
+4. Run the docs:publish command
+
+Your page should be live on http://[username].github.io/[repo] !
 
 > you can also use [gitbook plugins](https://plugins.gitbook.com/) or add css by referencing to a .css file in your package.json
 
