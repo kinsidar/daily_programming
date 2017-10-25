@@ -77,7 +77,7 @@ $ npm run docs:build
 $ cd _book
 $ git init
 $ git commit --allow-empty -m "Update docs"
-$ git checkout gh-pages
+$ git checkout -b gh-pages (remove -b after first time running this command)
 $ git add .
 $ git commit -am "Update docs"
 $ git push git@github.com:<username>/<repo> gh-pages --force
