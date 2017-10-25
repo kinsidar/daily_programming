@@ -19,15 +19,9 @@ Credits to [this](https://medium.com/@gpbl/how-to-use-gitbook-to-publish-docs-fo
 ```
 3. Create [SUMMARY.md](https://toolchain.gitbook.com/pages.html) in /docs directory
 ```
-<<<<<<< HEAD
   # Table of content 
   * [Getting Started](docs/getting-started.md)
   * [Second Chapter](docs/api-guide.md)
-=======
-    # Table of content 
-    * [Getting Started](docs/getting-started.md)
-    * [Second Chapter](docs/api-guide.md)
->>>>>>> 48413155c42df5aaf906c8386ae1a624b5c60099
 ```
 4. Create and save .md files which are linked in SUMMARY.md in the /docs or its subdirectories (the book's chapters and articles)
 
