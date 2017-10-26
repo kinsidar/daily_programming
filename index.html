@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Introduction | Setting up Gitbook for a project and hosting on Github Pages</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="npm version">
+        <meta name="description" content="node versionnpm version">
         <meta name="generator" content="GitBook 2.5.2">
         
         
@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-chapter-title="Introduction" data-filepath="README.md" data-basepath="." data-revision="Wed Oct 25 2017 15:11:15 GMT-0700 (Pacific Daylight Time)">
+    <div class="book" data-level="0" data-chapter-title="Introduction" data-filepath="README.md" data-basepath="." data-revision="Thu Oct 26 2017 15:35:17 GMT-0700 (Pacific Daylight Time)">
     
 
 <div class="book-summary">
@@ -138,7 +138,8 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="setting-up-gitbook-for-a-project-and-hosting-on-github-pages">Setting up Gitbook for a project and hosting on Github Pages</h1>
-<p><img src="https://img.shields.io/badge/npm-v3.10.10-blue.svg" alt="npm version"></p>
+<p><img src="https://img.shields.io/badge/node-v6.11.4-blue.svg" alt="node version">
+<img src="https://img.shields.io/badge/npm-v3.10.10-blue.svg" alt="npm version"></p>
 <p>Credits to <a href="https://medium.com/@gpbl/how-to-use-gitbook-to-publish-docs-for-your-open-source-npm-packages-465dd8d5bfba" target="_blank">this</a> guide</p>
 <blockquote>
 <p>This is a documentation of setting up the basic requirements for your gitbook and hosting onto github pages, refer to <a href="https://toolchain.gitbook.com/" target="_blank">gitbook toolchain documentation</a> for details on how to structure and write your gitbook</p>
@@ -208,7 +209,7 @@
 $ cd _book
 $ git init
 $ git commit --allow-empty -m &quot;Update docs&quot;
-$ git checkout gh-pages
+$ git checkout -b gh-pages (remove -b after first time running this command)
 $ git add .
 $ git commit -am &quot;Update docs&quot;
 $ git push git@github.com:&lt;username&gt;/&lt;repo&gt; gh-pages --force
