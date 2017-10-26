@@ -1,5 +1,6 @@
 # Setting up Gitbook for a project and hosting on Github Pages
 
+![node version](https://img.shields.io/badge/node-v6.11.4-blue.svg)
 ![npm version](https://img.shields.io/badge/npm-v3.10.10-blue.svg)
 
 Credits to [this](https://medium.com/@gpbl/how-to-use-gitbook-to-publish-docs-for-your-open-source-npm-packages-465dd8d5bfba) guide
